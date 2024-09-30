@@ -36,7 +36,19 @@
 
 ### Решение 1
 
-![]()
+Создал Deployment приложения, состоящего из контейнеров busybox и multitool. 
+
+https://github.com/artmur1/22-2.1-K8S/blob/main/file/deployment.yaml
+
+Запись busybox каждые пять секунд обеспечил через команду
+
+    'while true; do ... ; sleep 5; done'
+
+![](https://github.com/artmur1/22-2.1-K8S/blob/main/img/22-2_1-01-01.png)
+
+multitool может читать файл, который периодоически обновляется:
+
+![](https://github.com/artmur1/22-2.1-K8S/blob/main/img/22-2_1-01-02.png)
 
 ------
 
@@ -53,7 +65,15 @@
 
 ### Решение 2
 
+DaemonSet приложения, состоящего из multitool:
 
+https://github.com/artmur1/22-2.1-K8S/blob/main/file/daemonset.yaml
+
+![](https://github.com/artmur1/22-2.1-K8S/blob/main/img/22-2_1-02-01.png)
+
+Подключился к мультитул и прочитал файл `/var/log/syslog` кластера MicroK8S:
+
+![](https://github.com/artmur1/22-2.1-K8S/blob/main/img/22-2_1-02-02.png)
 
 ------
 
